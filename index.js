@@ -17,6 +17,8 @@ var tree = parser.file_input()
 if (tree.parser._syntaxErrors == 0)
 {
     console.log("aucune erreurs de syntax trouvé ! ")
+    let totalLines = tree.stop.line;
+    console.log("total lines: " + totalLines)
 }
 else
 {
