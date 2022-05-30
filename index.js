@@ -13,13 +13,13 @@ var tokens  = new antlr4.CommonTokenStream(lexer)
 var parser = new grammarPythonParser(tokens)
 var listener = new SyntaxError();
 
-var errLine = [];
+var errTokens = [];
 
 parser.removeErrorListeners();
 parser.addErrorListener({
 syntaxError: (recognizer, offendingSymbol, line, column, msg, err) => {
     console.error(`offendingSymbol: ${offendingSymbol}, line ${line}, col ${column}: ${msg}, err: ${err}`);
-    errLine.push(line)
+    errTokens.push(offendingSymbol)
 }
 });
 
@@ -48,12 +48,16 @@ else
 }
 
 console.log("****************************")
-console.log("errLine: " + errLine)
+for(let err in errTokens){
+    console.log("errToken: " + errTokens[err]) //.line)
+}
+console.log("****************************")
+
 
 // console.log("TOKENS: ")
 // let index = 0;
 // while(index < tokenIndex-1){
-//     console.log(index + " : " + tokens.get(index))
+//     console.log("Index: " + index + " : " + tokens.get(index))
 //     index++;
 // }
 
