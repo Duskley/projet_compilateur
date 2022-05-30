@@ -3,6 +3,11 @@ import antlr4 from 'antlr4'
 import grammarPythonLexer from './grammarPythonLexer.js'
 import grammarPythonParser from './grammarPythonParser.js'
 
+if(process.argv.length < 3) {
+    console.log("Aucun fichier test a été donné en argument ! ")
+    process.exit(1)
+}
+
 const nameFile = process.argv[2]
 
 var input = fs.readFileSync(nameFile, 'UTF-8')
