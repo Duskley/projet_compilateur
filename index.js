@@ -12,7 +12,7 @@ var tokens  = new antlr4.CommonTokenStream(lexer)
 var parser = new grammarPythonParser(tokens)
 
 parser.buildParseTrees = true
-var tree = parser.program()
+var tree = parser.file_input()
 
 if (tree.parser._syntaxErrors == 0)
 {
