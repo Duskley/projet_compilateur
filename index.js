@@ -88,7 +88,14 @@ for(let err in errTokens){
             if(isPrint){
                 printErrLine = token.line;
             }
+
+            if(token.text.includes("=")){
+                minorErr++; //déclaration err   
+            }
+
         }
+
+
         index++;
 
     }
