@@ -1,6 +1,7 @@
-
-x := 10 + 5
-
-print x + 8
-
-print return
+def ab():
+    print return
+    print("toto")
+    a=
+ return 
+e=
+fe=
