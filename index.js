@@ -37,11 +37,6 @@ parser.addErrorListener({
     syntaxError: (recognizer, offendingSymbol, line, column, msg, err) => {
         console.error(`offendingSymbol: ${offendingSymbol}, line ${line}, col ${column}: ${msg}, err: ${err}`);
         errTokens.push(offendingSymbol)
-
-        // console.log("################################## " + recognizer['_input'])
-        // for(let el in recognizer){
-        //     console.log("!!!!!!EL: " + el)
-        // }
     }
 });
 
@@ -135,24 +130,6 @@ console.log("MINOR ERR: " + minorErr) // p.ex un print sans ()
 console.log("MAJOR ERR: " + majorErr) // p.ex un var sans declarator
 
 
-
-console.log()
-// while(index < tokenIndex-1){
-
-//     let token = tokens.get(index);
-//     if(token.line == line){
-//         if("print" in token.text){
-//             printErr = true;
-//             minorErr++;
-//         }
-
-
-//     }
-//     console.log("Index: " + index + " : " + tokens.get(index))
-//     index++;
-// }
-
-
 console.log("TOKENS: ")
 index = 0;
 var scoreT = (score * nbLine) / 100
@@ -169,10 +146,10 @@ if (scoreT > 70 && (scoreT < 85 || scoreT == 90))
     note = "Bien"
 if (scoreT > 85 && (scoreT < 95 || scoreT == 95))
     note = "Très Bien"
-while (index < tokenIndex - 1) {
-    console.log("Index: " + index + " : " + tokens.get(index))
-    index++;
-}
+// while (index < tokenIndex - 1) {
+//     console.log("Index: " + index + " : " + tokens.get(index))
+//     index++;
+// }
 
 
 if (tree.parser._syntaxErrors == 0) {
