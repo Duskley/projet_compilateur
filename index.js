@@ -46,9 +46,9 @@ else {
     console.log("Nombre des erreurs: " + tree.parser._syntaxErrors)
 
 
-    for (let err in parser._errHandler) {
-        console.log("err: " + err + " " + parser._errHandler[err])
-    }
+    // for (let err in parser._errHandler) {
+    //     console.log("err: " + err + " " + parser._errHandler[err])
+    // }
 }
 
 // console.log("****************************")
@@ -90,7 +90,7 @@ for(let err in errTokens){
             }
 
             if(token.text.includes("=")){
-                minorErr++; //déclaration err   
+                majorErr++; //déclaration err   
             }
 
         }
@@ -142,7 +142,8 @@ while(index < tokenIndex-1){
 }
 
 console.log("DEADCODE ERR: " + deadCode)  //p.ex un code après return
-console.log("MINOR ERR: " + minorErr) // p.ex un var sans declarator
+console.log("MINOR ERR: " + minorErr) // p.ex un print sans ()
+console.log("MAJOR ERR: " + majorErr) // p.ex un var sans declarator
 
 
 // while(index < tokenIndex-1){
