@@ -132,6 +132,8 @@ console.log("MAJOR ERR: " + majorErr) // p.ex un var sans declarator
 
 console.log("TOKENS: ")
 index = 0;
+if(score < 0 ) score = 0
+
 var scoreT = (score * nbLine) / 100
 
 if (scoreT < 5 || scoreT==5)
@@ -150,7 +152,6 @@ if (scoreT > 85 && (scoreT < 95 || scoreT == 95))
 //     console.log("Index: " + index + " : " + tokens.get(index))
 //     index++;
 // }
-
 
 if (tree.parser._syntaxErrors == 0) {
     console.log("aucune erreurs de syntax trouvé ! votre score est de =>" + score+" "+note)
