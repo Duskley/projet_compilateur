@@ -1,3 +1,12 @@
+
+def ab():
+    print return
+    print("toto")
+    a=
+ return 
+e=
+fe=
+
 def test():
     x = 10
     if( 10 == 10):
@@ -9,3 +18,4 @@ def test():
     return " val "
 
 print test()
+
